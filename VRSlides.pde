@@ -41,7 +41,7 @@ void setup() {
 
   textInputSize = 60;
   
-  mov = new Movie(this, "quilt-[0001-5399].mp4");
+  mov = new Movie(this, "quilt_450pixels.mp4");
   for (int i = 0; i< numPages; i++){
     pg[i] = createGraphics(1920, 1080, P3D);
   }
@@ -211,13 +211,13 @@ void drawScreenThree() {
   pg[4].text(words[19], boxStartX/2, boxStartY+margin*6, words[19].length()*textInputSize, boxHeight);
   pg[4].endDraw();
   
-  image(mov, xpos, ypos, mov.width/5, mov.height/5);
+  image(mov, xpos, ypos, mov.width/2, mov.height/2);
   image(pg[4],0,0, width, height);
   
-  if(ypos<height+mov.height/5){
+  if(ypos<height+mov.height/2){
     ypos+=5;
   } else {
-    ypos=-mov.height/5;
+    ypos=-mov.height/2;
     xpos =random(-50, width);
   }
   mov.loop();
